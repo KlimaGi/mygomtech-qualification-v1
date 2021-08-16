@@ -1,4 +1,4 @@
-import { employees } from '../data';
+import { employees } from "../data";
 
 let items = [];
 
@@ -13,8 +13,5 @@ export const getItems = () => {
     return {
       ...(updatedItem || userItem),
     };
-  })
+  });
 };
-
-
-
