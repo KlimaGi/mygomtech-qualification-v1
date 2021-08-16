@@ -9,6 +9,7 @@ import { Routes } from "~/constants";
 import itemHasWeakPassword from "~/utils/itemHasWeakPassword";
 import itemHasReusedPassword from "~/utils/itemHasReusedPassword";
 import itemIsOlder from "~/utils/itemIsOlder";
+import itemHasWrongEmail from "~/utils/itemHasWrongEmail";
 import { useUserContext } from "../UserContext";
 
 const UsersManagement = () => {
@@ -37,7 +38,7 @@ const UsersManagement = () => {
           <List items={items} />
         </Route>
         <Route path={Routes.Weak}>
-          <List items={items} />
+          <List items={itemHasWrongEmail(items)} />
         </Route>
         <Route path={Routes.Reused}>
           <List
