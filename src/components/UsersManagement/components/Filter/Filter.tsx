@@ -3,6 +3,7 @@ import { Routes } from "~/constants";
 import { IItem } from "~/services/getUserItems";
 import FilterTab from "./components/FilterTab";
 import itemIsOlder from "~/utils/itemIsOlder";
+import itemHasReusedPassword from "~/utils/itemHasReusedPassword";
 
 import "./filter-style.scss";
 
@@ -13,7 +14,9 @@ interface IFilter {
 const Filter: FC<IFilter> = ({ items }) => {
   const weakItemsCount = items.reduce((count, item) => count + 1, 0);
 
-  const reusedItemsCount = items.reduce((count, item) => count + 1, 0);
+  const reusedItemsCount = items.filter((item) =>
+    itemHasReusedPassword(item, items)
+  ).length;
   const olderItemsCount = itemIsOlder(items).length;
   return (
     <div className="filter">
