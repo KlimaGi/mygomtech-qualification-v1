@@ -1,8 +1,8 @@
 import { FC, SyntheticEvent } from "react";
+import { useHistory } from "react-router";
 import { Routes } from "~/constants";
 import { IItem } from "~/services/getUserItems";
 import logout from "../../../../services/logout";
-import { useHistory } from "react-router";
 
 import "./header-style.scss";
 
