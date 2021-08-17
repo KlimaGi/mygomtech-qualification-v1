@@ -38,7 +38,7 @@ const UsersManagement = () => {
           <List items={items} />
         </Route>
         <Route path={Routes.Weak}>
-          <List items={itemHasWrongEmail(items)} />
+          <List items={items} />
         </Route>
         <Route path={Routes.Reused}>
           <List
@@ -47,6 +47,9 @@ const UsersManagement = () => {
         </Route>
         <Route path={Routes.Old}>
           <List items={itemIsOlder(items)} />
+        </Route>
+        <Route path={Routes.Wrong}>
+          <List items={itemHasWrongEmail(items)} />
         </Route>
       </Switch>
     </div>
