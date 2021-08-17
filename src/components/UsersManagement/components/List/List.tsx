@@ -12,16 +12,17 @@ interface IList {
 
 interface IUpdateModal {
   item: IItem;
+  updateEmail: (arg: string) => void;
 }
 
-const UpdateModal: FC<IUpdateModal> = ({ item }) => {
+const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
   const [showModal, setShowModal] = useState(false);
-  const [newEmail, setNewEmail] = useState("");
+  const [newEmail, setNewEmail] = useState(item.email);
 
   return (
     <>
       <button className="update" onClick={() => setShowModal(true)}>
-        Update Password
+        Update Email
       </button>
       <Modal
         className="modal"
@@ -29,9 +30,9 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
         onRequestClose={() => setShowModal(false)}
         contentLabel="Example Modal"
       >
-        <h1>Update Password</h1>
+        <h1>Update Email</h1>
         <input
-          placeholder="new password"
+          placeholder="new email"
           className="input"
           value={newEmail}
           onChange={(event) => setNewEmail(event.target.value)}
@@ -44,8 +45,9 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
                 ...item,
                 email: newEmail,
               });
-
-              window.location.reload();
+              setShowModal(false);
+              updateEmail(newEmail);
+              // window.location.reload();
             }}
           >
             Change
@@ -64,19 +66,28 @@ const UpdateModal: FC<IUpdateModal> = ({ item }) => {
   );
 };
 
-const List: FC<IList> = ({ items }) => (
-  <ul className="list">
-    {items.map((item) => (
-      <li className="item">
-        <ItemIcon name={item.name} />
-        <div>
-          <div className="title">{item.name}</div>
-          <div className="description">{item.email}</div>
-        </div>
-        <UpdateModal item={item} />
-      </li>
-    ))}
-  </ul>
-);
+const List: FC<IList> = ({ items }) => {
+  const [newEmail, setNewEmail] = useState<string>("");
+  const updateEmail = (email: string): void => {
+    setNewEmail(email);
+  };
+
+  return (
+    <ul className="list">
+      {items.map((item) => (
+        <li className="item">
+          <ItemIcon name={item.name} />
+          <div>
+            <div className="title">{item.name}</div>
+            <div className="description">
+              {newEmail ? newEmail : item.email}
+            </div>
+          </div>
+          <UpdateModal item={item} updateEmail={updateEmail} />
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default List;
