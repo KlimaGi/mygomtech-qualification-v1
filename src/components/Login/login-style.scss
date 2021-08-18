@@ -1,5 +1,8 @@
+@import "../../style/_variables";
+//@import '../../../../style/_variables';
+
 .login-page {
-  background: url('/public/assets/mountain.jpg');
+  background: url("/public/assets/mountain.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,9 +15,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.712);
+    color: $dark-grey;
     padding: 50px;
     width: 350px;
     height: 400px;
+    border-radius: 2px;
   }
+}
+.error {
+  border: 1px solid #ff0000;
+  border-radius: 2px;
 }
