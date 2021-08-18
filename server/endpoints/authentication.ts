@@ -11,7 +11,7 @@ import {
 const router = Router();
 
 // if password and email is correct returns new token
-router.get("/api/login", timeout, (req, res) => {
+router.get("/api/login", (req, res) => {
   const { username, password } = req.query;
 
   console.log("req.query ", req.query);
@@ -51,7 +51,7 @@ router.get("/api/logout", (req, res) => {
 });
 
 // return token owner info
-router.get("/api/user", (req, res) => {
+router.get("/api/user", timeout, (req, res) => {
   const token = req.headers.authorization?.split(" ")?.[1];
 
   if (token) {

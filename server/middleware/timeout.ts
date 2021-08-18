@@ -1,6 +1,5 @@
 const timeout = (req, res, next) => {
-    setTimeout(() => next(), 500);
-}
-  
+  setTimeout(() => next(), 1500);
+};
+
 export default timeout;
-  

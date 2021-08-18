@@ -2,7 +2,7 @@ import List from "./components/List/List";
 import useItemsProvider from "./useItemsProvider";
 import ErrorBlock from "../ErrorBlock";
 import Filter from "./components/Filter/Filter";
-import LoadingScreen from "../LoadingScreen";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Header from "./components/Header/Header";
 import { Route, Switch } from "react-router-dom";
 import { Routes } from "~/constants";
