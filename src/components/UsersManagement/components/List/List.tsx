@@ -30,14 +30,14 @@ const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
         onRequestClose={() => setShowModal(false)}
         contentLabel="Example Modal"
       >
-        <h1>Update Email</h1>
+        <h1 className="h1-modal">Update Email</h1>
         <input
           placeholder="new email"
-          className="input"
+          className="input input-modal px-8px"
           value={newEmail}
           onChange={(event) => setNewEmail(event.target.value)}
         />
-        <div className="pt-12px text-center">
+        <div className="pt-16px pb-16px text-center">
           <button
             className="button"
             onClick={async () => {

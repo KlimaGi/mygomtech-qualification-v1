@@ -1,4 +1,4 @@
-@import '../../../../style/_variables';
+@import "../../../../style/_variables";
 
 .list {
   list-style: none;
@@ -39,4 +39,12 @@
       background-color: $grey-light;
     }
   }
+}
+.h1-modal {
+  margin: 0 auto;
+  padding: 16px;
+}
+.input-modal {
+  width: 68%;
+  margin: 0 auto;
 }

@@ -9,10 +9,7 @@ const ErrorBlock: FC<IErrorBlock> = ({ error }) => {
     return null;
   }
 
-  return;
-  <div>
-    <p>{error}</p>
-  </div>;
+  return <div className="error-style">{error}</div>;
 };
 
 export default memo(ErrorBlock);

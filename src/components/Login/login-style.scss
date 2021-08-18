@@ -1,5 +1,4 @@
 @import "../../style/_variables";
-//@import '../../../../style/_variables';
 
 .login-page {
   background: url("/public/assets/mountain.jpg");
@@ -24,6 +23,7 @@
   }
 }
 .error {
-  border: 1px solid #ff0000;
+  border: 1px solid $more-red;
   border-radius: 2px;
+  background-color: rgba(155, 0, 0, 0.151);
 }

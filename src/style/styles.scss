@@ -27,7 +27,7 @@ body,
   border-radius: 2px;
   cursor: pointer;
   color: white;
-  padding: 12px 6px;
+  padding: 12px 24px;
   font-weight: bold;
   font-size: 16px;
 }
@@ -46,4 +46,11 @@ body,
   flex-direction: column;
   left: 40%;
   top: 38%;
+}
+
+.error-style {
+  color: $more-red;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding-top: 5px;
 }

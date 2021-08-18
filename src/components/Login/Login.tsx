@@ -52,7 +52,7 @@ const Login = () => {
           onChange={(event) => setUsername(event.target.value)}
           placeholder="Username"
           type="text"
-          className={`input mt-52px ${usernameErr ? "error" : null}`}
+          className={`input mt-52px pl-8px ${usernameErr ? "error" : null}`}
         />
         <ErrorBlock error={usernameErr} />
         <input
@@ -60,7 +60,7 @@ const Login = () => {
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Password"
           type="password"
-          className={`input mt-24px ${passwordErr ? "error" : null}`}
+          className={`input mt-24px pl-8px ${passwordErr ? "error" : null}`}
         />
         <ErrorBlock error={passwordErr} />
 
