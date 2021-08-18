@@ -9,7 +9,7 @@
   .item {
     min-height: 32px;
     border-bottom: 1px solid $grey-light;
-    padding: 12px 6px;
+    padding: 12px 0px 12px 32px;
     display: flex;
 
     .item-icon {
@@ -45,6 +45,6 @@
   padding: 16px;
 }
 .input-modal {
-  width: 68%;
+  width: 67%;
   margin: 0 auto;
 }

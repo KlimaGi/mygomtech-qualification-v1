@@ -1,7 +1,7 @@
-@import '../../../../style/_variables';
+@import "../../../../style/_variables";
 
 .header {
-  height: 160px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,8 +10,8 @@
   color: white;
 
   .user-section {
-    top: 16px;
-    right: 32px;;
+    top: 32px;
+    right: 32px;
     position: absolute;
 
     button {
