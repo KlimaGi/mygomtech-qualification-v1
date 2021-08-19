@@ -1,7 +1,7 @@
 import { arr } from "../fixtures/data";
 import itemHasReusedEmail from "../../utils/itemHasReusedEmail";
 
-test("should return items with reused passwords", () => {
+test("should return true when given item have reused email", () => {
   const check = itemHasReusedEmail(arr[2], arr);
   expect(check).toBe(true);
 });
