@@ -1,4 +1,7 @@
-import { IItem } from "../../services/getUserItems";
-import itemHasReusedPassword from "../../utils/itemHasReusedPassword";
+import { arr } from "../fixtures/data";
+import itemHasReusedEmail from "../../utils/itemHasReusedEmail";
 
-test("should return items with reused passwords", () => {});
+test("should return items with reused passwords", () => {
+  const check = itemHasReusedEmail(arr[2], arr);
+  expect(check).toBe(true);
+});
