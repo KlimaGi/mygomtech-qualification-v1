@@ -2,6 +2,12 @@
 @import "./_spacings";
 @import "./__mixins.scss";
 
+@import "../components/Login/login-style.scss";
+@import "../components/UsersManagement/components/List/list-style.scss";
+@import "../components/UsersManagement/components/Filter/filter-style.scss";
+@import "../components/LoadingScreen/loading-screen-style.scss";
+@import "../components/UsersManagement/components/Header/header-style.scss";
+
 html,
 body,
 #app {

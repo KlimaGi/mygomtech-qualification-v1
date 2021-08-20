@@ -1,10 +1,8 @@
 import { SyntheticEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Routes } from "~/constants";
-import login from "~/services/login";
+import { Routes } from "../../constants";
+import login from "../../services/login";
 import ErrorBlock from "../ErrorBlock";
-
-import "./login-style.scss";
 
 const Login = () => {
   const { push } = useHistory();

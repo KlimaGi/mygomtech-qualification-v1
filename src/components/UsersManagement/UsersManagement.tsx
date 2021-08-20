@@ -5,11 +5,10 @@ import Filter from "./components/Filter/Filter";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Header from "./components/Header/Header";
 import { Route, Switch } from "react-router-dom";
-import { Routes } from "~/constants";
-import itemHasWeakPassword from "~/utils/itemHasWeakPassword";
-import itemHasReusedEmail from "~/utils/itemHasReusedEmail";
-import itemIsOlder from "~/utils/itemIsOlder";
-import itemHasWrongEmail from "~/utils/itemHasWrongEmail";
+import { Routes } from "../../constants";
+import itemHasReusedEmail from "../../utils/itemHasReusedEmail";
+import itemIsOlder from "../../utils/itemIsOlder";
+import itemHasWrongEmail from "../../utils/itemHasWrongEmail";
 import { useUserContext } from "../UserContext";
 
 const UsersManagement = () => {

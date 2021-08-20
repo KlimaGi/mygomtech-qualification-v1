@@ -1,4 +1,4 @@
-@import '../../../../style/_variables';
+@import "../../../../style/_variables";
 
 .filter {
   display: flex;
@@ -14,7 +14,7 @@
     cursor: pointer;
     user-select: none;
     margin-left: 12px;
-    border-radius: 9px;
+    border-radius: 4px;
 
     &:hover {
       background-color: $grey;

@@ -1,12 +1,10 @@
 import { FC } from "react";
-import { Routes } from "~/constants";
-import { IItem } from "~/services/getUserItems";
+import { Routes } from "../../../../constants";
+import { IItem } from "../../../../services/getUserItems";
 import FilterTab from "./components/FilterTab";
-import itemIsOlder from "~/utils/itemIsOlder";
-import itemHasReusedEmail from "~/utils/itemHasReusedEmail";
-import itemHasWrongEmail from "~/utils/itemHasWrongEmail";
-
-import "./filter-style.scss";
+import itemIsOlder from "../../../../utils/itemIsOlder";
+import itemHasReusedEmail from "../../../../utils/itemHasReusedEmail";
+import itemHasWrongEmail from "../../../../utils/itemHasWrongEmail";
 
 interface IFilter {
   items: Array<IItem>;

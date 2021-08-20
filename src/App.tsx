@@ -12,8 +12,6 @@ import PublicRoute from "./components/PublicRoute";
 import { Routes } from "./constants";
 import { UserContextProvider } from "./components/UserContext";
 
-import "./style/styles.scss";
-
 const App = () => (
   <Router>
     <Switch>

@@ -1,5 +1,3 @@
-import "./loading-screen-style.scss";
-
 const LoadingScreen = () => (
   <div className="loader">
     <div className="loader-inner">

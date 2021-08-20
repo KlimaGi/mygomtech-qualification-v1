@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Route, RouteProps, useHistory } from "react-router-dom";
-import { Routes } from "~/constants";
+import { Routes } from "../constants";
 
 const PrivateRoute: FC<RouteProps> = ({ path, component }) => {
   const { push } = useHistory();
