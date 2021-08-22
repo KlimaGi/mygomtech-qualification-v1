@@ -1,5 +1,5 @@
 import { arr } from "../fixtures/data";
-import itemIsOlder from "../../src/utils/itemIsOlder";
+import itemIsOlder from "../../utils/itemIsOlder";
 
 test("should return true when given item have reused email", () => {
   const check = itemIsOlder(arr);
