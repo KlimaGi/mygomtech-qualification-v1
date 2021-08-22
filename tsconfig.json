@@ -21,7 +21,7 @@
     "./src/**/*",
     "./tests/**/*",
     "types",
-    "src/setupTests.js",
+    "src/setupTests.ts",
     "tests"
   ]
 }
