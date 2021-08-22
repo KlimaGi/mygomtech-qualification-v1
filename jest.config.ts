@@ -1,15 +1,21 @@
-import { Config } from '@jest/types';
+import { Config } from "@jest/types";
 
-const config: Config.InitialOptions = {
-  preset: 'ts-jest',
+export const config: Config.InitialOptions = {
+  preset: "ts-jest",
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    "^.+\\.(ts|tsx)$": "ts-jest",
   },
   globals: {
-    'ts-jest': {
+    "ts-jest": {
       isolatedModules: true,
     },
   },
+  verbose: true,
 };
 
-export default config;
+// async function
+export default async (): Promise<Config.InitialOptions> => {
+  return {
+    verbose: true,
+  };
+};

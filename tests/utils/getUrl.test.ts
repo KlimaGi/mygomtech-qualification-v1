@@ -1,6 +1,6 @@
 require("dotenv").config();
-import getUrl from "../../utils/getUrl";
-import { API } from "../../constants";
+import getUrl from "../../src/utils/getUrl";
+import { API } from "../../src/constants";
 
 test("should return correct url for server", () => {
   const url = getUrl(API.Login);
