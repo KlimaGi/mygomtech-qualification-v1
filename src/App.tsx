@@ -14,7 +14,7 @@ import { UserContextProvider } from "./components/UserContext";
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Switch>
         <PublicRoute path={Routes.Login} component={Login} />
         <PrivateRoute
@@ -30,7 +30,7 @@ const App = () => {
           component={() => <Redirect to={Routes.Login} />}
         />
       </Switch>
-    </div>
+    </Router>
   );
 };
 
