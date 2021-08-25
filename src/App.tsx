@@ -12,24 +12,26 @@ import PublicRoute from "./components/PublicRoute";
 import { Routes } from "./constants";
 import { UserContextProvider } from "./components/UserContext";
 
-const App = () => (
-  <Router>
-    <Switch>
-      <PublicRoute path={Routes.Login} component={Login} />
-      <PrivateRoute
-        path={Routes.Users}
-        component={() => (
-          <UserContextProvider>
-            <UsersManagement />
-          </UserContextProvider>
-        )}
-      />
-      <Route
-        path={Routes.Root}
-        component={() => <Redirect to={Routes.Login} />}
-      />
-    </Switch>
-  </Router>
-);
+const App = () => {
+  return (
+    <div>
+      <Switch>
+        <PublicRoute path={Routes.Login} component={Login} />
+        <PrivateRoute
+          path={Routes.Users}
+          component={() => (
+            <UserContextProvider>
+              <UsersManagement />
+            </UserContextProvider>
+          )}
+        />
+        <Route
+          path={Routes.Root}
+          component={() => <Redirect to={Routes.Login} />}
+        />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
