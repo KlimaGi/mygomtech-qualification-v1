@@ -9,6 +9,7 @@
     "start:web": "webpack serve",
     "start": "run-p start:*"
   },
+  "type": "module",
   "dependencies": {
     "@jest/types": "^27.0.6",
     "@testing-library/user-event": "^13.2.1",
