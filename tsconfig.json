@@ -1,25 +1,21 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "target": "es5",
     "lib": ["dom", "es7", "ES2019", "es2020"],
     "typeRoots": ["./node_modules/@types", "./types"],
-    "allowJs": true,
-    "downlevelIteration": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     "module": "CommonJS",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "downlevelIteration": true,
+    "allowJs": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "charset": "utf8",
     "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
     "outDir": "./dist"
   },
-  "include": ["./src/**/*", "./tests/**/*", "types"]
+  "include": ["./src/**/*", "./__tests__/**/*", "types"]
 }

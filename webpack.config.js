@@ -1,6 +1,6 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
-const path = require("path");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -42,7 +42,7 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    contentBase: "./",
+    static: "dist",
     hot: true,
   },
 };
