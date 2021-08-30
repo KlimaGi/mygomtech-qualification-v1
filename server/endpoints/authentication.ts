@@ -14,8 +14,6 @@ const router = Router();
 router.get("/api/login", (req, res) => {
   const { username, password } = req.query;
 
-  console.log("req.query ", req.query);
-
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
@@ -30,10 +28,8 @@ router.get("/api/login", (req, res) => {
       email: user.email,
       token,
     });
-
     return;
   }
-
   res.status(401).send();
 });
 
@@ -65,11 +61,9 @@ router.get("/api/user", timeout, (req, res) => {
         username: tokenOwner.username,
         email: tokenOwner.email,
       });
-
       return;
     }
   }
-
   res.status(401).send();
 });
 

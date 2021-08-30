@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "start:server": "ts-node ./server/index.ts",
     "start:web": "webpack serve",
     "start": "run-p start:*"

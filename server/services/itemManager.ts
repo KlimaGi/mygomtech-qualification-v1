@@ -11,9 +11,6 @@ export const getItems = () => {
   return employees.map((userItem) => {
     const updatedItem = items.find(({ id }) => id === userItem.id);
 
-    console.log("updatedItem ", updatedItem);
-    console.log("userItem ", userItem);
-
     return {
       ...(updatedItem || userItem),
     };

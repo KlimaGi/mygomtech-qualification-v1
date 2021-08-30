@@ -1,4 +1,4 @@
-import { arr } from "../fixtures/data";
+import { arr } from "../../fixtures/data";
 import itemHasWrongEmail from "../../utils/itemHasWrongEmail";
 
 test("should return items with wrong emails", () => {

@@ -5,7 +5,7 @@ import login from "../../services/login";
 import ErrorBlock from "../ErrorBlock";
 
 const Login = () => {
-  const { push } = useHistory();
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState<string>();
@@ -19,7 +19,7 @@ const Login = () => {
     formValidation();
     try {
       await login(username, password);
-      push(Routes.Users);
+      history.push(Routes.Users);
     } catch (error) {
       setErrorMessage("Your username or password is incorrect");
     }
@@ -29,7 +29,7 @@ const Login = () => {
     if (username.length == 0) {
       setUsernameErr("Your username is required.");
     } else if (/[!@#$%&*?]/.test(username)) {
-      setUsernameErr("Your username can not have this this speacial character");
+      setUsernameErr("Your username can not have this speacial character");
     } else if (username.length <= 3) {
       setUsernameErr("Your username should have at least 3 letters.");
     }
