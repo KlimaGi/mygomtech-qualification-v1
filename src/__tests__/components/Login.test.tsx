@@ -97,7 +97,7 @@ describe("Login", () => {
     });
   });
 
-  it("should render new component when the user enters correct username and password", () => {
+  it("should remove login form when the user enters correct username and password", () => {
     user.type(screen.getByPlaceholderText(/username/i), "admin");
     user.type(screen.getByPlaceholderText(/password/i), "admin");
     user.click(screen.getByText(/login/i));

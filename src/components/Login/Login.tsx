@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 import { Routes } from "../../constants";
 import login from "../../services/login";
 import ErrorBlock from "../ErrorBlock";
+import {
+  usernameValidation,
+  passwordValidation,
+} from "../../services/formValidation";
 
 const Login = () => {
   const history = useHistory();
@@ -16,28 +20,15 @@ const Login = () => {
   const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage(null);
-    formValidation();
+
+    usernameValidation(username, setUsernameErr);
+    passwordValidation(password, setPasswordErr);
+
     try {
       await login(username, password);
       history.push(Routes.Users);
     } catch (error) {
       setErrorMessage("Your username or password is incorrect");
-    }
-  };
-
-  const formValidation = () => {
-    if (username.length == 0) {
-      setUsernameErr("Your username is required.");
-    } else if (/[!@#$%&*?]/.test(username)) {
-      setUsernameErr("Your username can not have this speacial character");
-    } else if (username.length <= 3) {
-      setUsernameErr("Your username should have at least 3 letters.");
-    }
-
-    if (password.length == 0) {
-      setPasswordErr("Password is required.");
-    } else if (password.length <= 3) {
-      setPasswordErr("Your password should be longer.");
     }
   };
 
