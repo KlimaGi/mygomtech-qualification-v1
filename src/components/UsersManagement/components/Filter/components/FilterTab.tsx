@@ -8,10 +8,10 @@ interface IFilterTab {
 }
 
 const FilterTab: FC<IFilterTab> = ({ title, count, path }) => {
-  const { push } = useHistory();
+  const history = useHistory();
 
   return (
-    <div className="filter-tab" onClick={() => push(path)}>
+    <div className="filter-tab" onClick={() => history.push(path)}>
       {`${title} (${count})`}
     </div>
   );
