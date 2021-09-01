@@ -11,10 +11,10 @@ interface IHeader {
 }
 
 const Header: FC<IHeader> = ({ items, username }) => {
-  const { push } = useHistory();
+  const history = useHistory();
   const handleClick = async (event: SyntheticEvent<HTMLButtonElement>) => {
     await logout();
-    push(Routes.Login);
+    history.push(Routes.Login);
   };
   const wrongItemsCount = itemHasWrongEmail(items).length;
   return (

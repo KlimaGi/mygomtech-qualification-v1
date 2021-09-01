@@ -4,9 +4,9 @@ import {
   cleanup,
   waitFor,
   waitForElementToBeRemoved,
+  queryByText,
 } from "@testing-library/react";
 import user from "@testing-library/user-event";
-import { createMemoryHistory } from "history";
 import Login from "../../components/Login/Login";
 
 describe("Login", () => {
@@ -16,7 +16,6 @@ describe("Login", () => {
   afterEach(cleanup);
 
   it("should display empty input of username, password", () => {
-    render(<Login />);
     expect(screen.getAllByPlaceholderText(/username/i));
     expect(screen.getAllByPlaceholderText(/password/i));
   });
