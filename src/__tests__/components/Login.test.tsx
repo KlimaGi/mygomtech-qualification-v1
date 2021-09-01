@@ -1,5 +1,12 @@
-import { render, screen, cleanup, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  cleanup,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import user from "@testing-library/user-event";
+import { createMemoryHistory } from "history";
 import Login from "../../components/Login/Login";
 
 describe("Login", () => {
@@ -90,7 +97,11 @@ describe("Login", () => {
     });
   });
 
-  it.todo(
-    "should render new component when the user enters correct username and input"
-  );
+  it("should render new component when the user enters correct username and password", () => {
+    user.type(screen.getByPlaceholderText(/username/i), "admin");
+    user.type(screen.getByPlaceholderText(/password/i), "admin");
+    user.click(screen.getByText(/login/i));
+
+    waitForElementToBeRemoved(() => screen.queryByText("Mygom.tech"));
+  });
 });
