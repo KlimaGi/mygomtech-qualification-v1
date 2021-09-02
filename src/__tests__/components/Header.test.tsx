@@ -1,11 +1,16 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import {
+  render,
+  screen,
+  cleanup,
+  waitForElementToBeRemoved,
+  queryByText,
+} from "@testing-library/react";
 import user from "@testing-library/user-event";
 import Header from "../../components/UsersManagement/components/Header/Header";
-import { arr } from "../../fixtures/data";
 
 describe("Header", () => {
   beforeEach(() => {
-    render(<Header items={arr} username="Mouse" />);
+    render(<Header items={[]} username="Mouse" />);
   });
   afterEach(cleanup);
 
@@ -32,4 +37,10 @@ describe("Header", () => {
   it("should display logout button with username 'Mouse'", () => {
     expect(screen.getByText(/mouse/i)).toBeInTheDocument();
   });
+
+  // fit("should remove header from page, when user clicks the logout button", () => {
+  //   user.click(screen.getByText(/logout/i));
+
+  //   expect(screen.getByText(/logout/i)).not.toBeInTheDocument();
+  // });
 });
