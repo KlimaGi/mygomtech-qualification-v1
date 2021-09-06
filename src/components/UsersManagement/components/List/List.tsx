@@ -45,7 +45,6 @@ const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
               });
               setShowModal(false);
               updateEmail(newEmail);
-              // window.location.reload();
             }}
           >
             Change
