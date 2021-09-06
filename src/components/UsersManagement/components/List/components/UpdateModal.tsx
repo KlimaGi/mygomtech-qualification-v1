@@ -23,7 +23,7 @@ const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
         onRequestClose={() => setShowModal(false)}
         contentLabel="Example Modal"
       >
-        <h1 className="h1-modal">Update Email</h1>
+        <h1 className="h1-modal">Update email</h1>
         <input
           placeholder="new email"
           className="input input-modal px-8px"

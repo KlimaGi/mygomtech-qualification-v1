@@ -5,7 +5,7 @@ describe("FilterTab", () => {
   beforeEach(() => {
     render(<FilterTab title="some" count={3} path={"/wrong"} />);
   });
-  fit("should call right function", () => {
+  it("should call right function", () => {
     const onClick = jest.fn();
     const { getByText } = render(<div onClick={onClick}>Wrong(2)</div>);
     fireEvent.click(getByText("Wrong(2)"));
