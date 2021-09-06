@@ -24,7 +24,7 @@ const getUserItems = async () => {
   });
 
   const data = await response.json();
-  console.log("data.items ", data.items);
+  console.log("getUserItems -async- data.items ", data.items);
   return data.items;
 };
 
