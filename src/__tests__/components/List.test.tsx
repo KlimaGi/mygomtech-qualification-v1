@@ -1,4 +1,4 @@
-import { render, getAllByRole } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import List from "../../components/UsersManagement/components/List/List";
 import { arr } from "../../fixtures/data";
 describe("List", () => {
