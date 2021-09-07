@@ -15,7 +15,7 @@ describe("UpdateModal", () => {
 
   fit("should show modal when user clicks the btn ", () => {
     const setShowModal = jest.fn();
-    const text = "Update email";
+    const text = /Update email/;
     render(<button onClick={() => setShowModal}>Update Email</button>);
     fireEvent.click(screen.getByText(text));
     expect(setShowModal).toHaveBeenCalledTimes(1);

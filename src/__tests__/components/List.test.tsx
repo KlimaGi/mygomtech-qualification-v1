@@ -1,13 +1,11 @@
-import { render } from "@testing-library/react";
+import { render, getAllByRole } from "@testing-library/react";
 import List from "../../components/UsersManagement/components/List/List";
 import { arr } from "../../fixtures/data";
 describe("List", () => {
-  it.todo(
-    "should render items list"
-    // ,() => {
-    //   const items = arr;
-    //   render(<List items={items} />);
-    //   expect(items).toHaveLength(10);
-    // }
-  );
+  it("should render all items list, length 10", () => {
+    const items = arr;
+    const { getAllByTestId } = render(<List items={items} />);
+    const allNames = getAllByTestId("item-name").map((li) => li.textContent);
+    expect(allNames).toHaveLength(10);
+  });
 });

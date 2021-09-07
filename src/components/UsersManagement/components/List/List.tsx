@@ -15,8 +15,8 @@ const List: FC<IList> = ({ items }) => {
 
   return (
     <ul className="list">
-      {items.map((item) => (
-        <li className="item">
+      {items.map((item, index) => (
+        <li className="item" key={index} data-testid="item-name">
           <ItemIcon name={item.name} />
           <div>
             <div className="title">{item.name}</div>
