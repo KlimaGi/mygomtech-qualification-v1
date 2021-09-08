@@ -26,6 +26,7 @@ const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)}
         contentLabel="Example Modal"
+        appElement={document.getElementById("app")}
       >
         <h1 className="h1-modal">Update Email</h1>
         <input

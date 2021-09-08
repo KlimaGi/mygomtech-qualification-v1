@@ -4,7 +4,6 @@ import {
   cleanup,
   waitFor,
   waitForElementToBeRemoved,
-  queryByText,
 } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import Login from "../../components/Login/Login";
