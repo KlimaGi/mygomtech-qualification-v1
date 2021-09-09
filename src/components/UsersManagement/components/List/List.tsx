@@ -20,7 +20,7 @@ const List: FC<IList> = ({ items }) => {
           <ItemIcon name={item.name} />
           <div>
             <div className="title">{item.name}</div>
-            <div className="description">
+            <div className="description" data-testid="item-email">
               {newEmail ? newEmail : item.email}
             </div>
           </div>

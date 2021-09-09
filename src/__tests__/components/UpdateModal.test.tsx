@@ -42,3 +42,25 @@ describe("UpdateModal", () => {
     waitForElementToBeRemoved(() => screen.queryByText("Change"));
   });
 });
+
+const MockList = () => {
+  const item = arr[0];
+  //arr[0]- email: "email1234"
+  const updateEmail = jest.fn(() => "jonaitis@mail.com");
+  return <UpdateModal item={item} updateEmail={updateEmail} />;
+};
+
+describe("Modal in List component", () => {
+  fit("should render modal in list", () => {
+    render(<MockList />);
+    user.click(screen.getByText(/update email/i));
+    const inputElement = screen.getByDisplayValue(/email1234/i);
+
+    fireEvent.change(inputElement, { target: { value: "jonaitis@mail.com" } });
+    fireEvent.click(screen.getByText(/change/i));
+    waitForElementToBeRemoved(() => screen.queryByText("Change"));
+    waitFor(() =>
+      expect(screen.queryByText(/jonaitis@mail.com/i)).toBeInTheDocument()
+    );
+  });
+});
