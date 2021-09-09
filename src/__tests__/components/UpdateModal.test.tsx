@@ -51,7 +51,7 @@ const MockList = () => {
 };
 
 describe("Modal in List component", () => {
-  fit("should render modal in list", () => {
+  fit("should render modal in list and see changed email", () => {
     render(<MockList />);
     user.click(screen.getByText(/update email/i));
     const inputElement = screen.getByDisplayValue(/email1234/i);
