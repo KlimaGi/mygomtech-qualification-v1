@@ -9,8 +9,10 @@ interface IList {
 
 const List: FC<IList> = ({ items }) => {
   const [newEmail, setNewEmail] = useState<string>("");
-  const updateEmail = (email: string): void => {
+  const [name, setName] = useState<string>("");
+  const updateEmail = (email: string, name: string): void => {
     setNewEmail(email);
+    setName(name);
   };
 
   return (
@@ -21,7 +23,7 @@ const List: FC<IList> = ({ items }) => {
           <div>
             <div className="title">{item.name}</div>
             <div className="description" data-testid="item-email">
-              {newEmail ? newEmail : item.email}
+              {newEmail && item.name == name ? newEmail : item.email}
             </div>
           </div>
           <UpdateModal item={item} updateEmail={updateEmail} />

@@ -5,12 +5,13 @@ import Modal from "react-modal";
 
 interface IUpdateModal {
   item: IItem;
-  updateEmail: (arg: string) => void;
+  updateEmail: (arg: string, arg1: string) => void;
 }
 
 const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
   const [showModal, setShowModal] = useState(false);
   const [newEmail, setNewEmail] = useState(item.email);
+  const name = item.name;
 
   return (
     <>
@@ -44,7 +45,7 @@ const UpdateModal: FC<IUpdateModal> = ({ item, updateEmail }) => {
                 email: newEmail,
               });
               setShowModal(false);
-              updateEmail(newEmail);
+              updateEmail(newEmail, name);
             }}
           >
             Change
